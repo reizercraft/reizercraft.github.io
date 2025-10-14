@@ -11,7 +11,7 @@
   <meta name="description" content="An awesome docsify site for publishing some content on the web.">
 
   <!-- Default Theme (see https://docsify.js.org/#/themes) -->
-  <link rel="stylesheet" href="docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="docsify/lib/themes/buble.css">
 
 </head>
 
@@ -26,6 +26,7 @@
       // Sidebar Configuration
       auto2top: true,
       loadSidebar: true,
+      alias: { '/.*/_sidebar.md': '/_sidebar.md' },
 
 
       // Search Plugin Configuration
@@ -34,20 +35,27 @@
         noData: 'No matches found.',
         // Headline depth, 1 - 6
         depth: 2,
+      },
+
+      // Latex support
+      latex: {
+        inlineMath   : [['$', '$']],
+        displayMath  : [['$$', '$$']],
       }
     };
   </script>
 
   <!-- Required -->
-  <script src="docsify/lib/docsify.min.js"></script>
+  <script src="docsify/lib/docsify.js"></script>
 
   <!-- Recommended -->
   <script src="docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="docsify/lib/plugins/search.js"></script>
 
-  <!-- katex -->
-  <link href="https://cdn.bootcss.com/KaTeX/0.10.0/katex.min.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/KaTeX/0.10.0/katex.min.js"></script>
+  <!-- LaTeX display engine -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  <!--  docsify-latex plugin -->
+  <script src="docsify-latex/dist/docsify-latex.js"></script>
 </body>
 
 </html>
